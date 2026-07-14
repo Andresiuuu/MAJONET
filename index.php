@@ -41,17 +41,25 @@
         <div class="cards">
             <div class="card">
                 <h3>Plan Básico</h3>
-                <h1>50</h1>
+                <h1>60</h1>
                 <p>MEGAS</p>
-                <span>$17.86 + IVA</span> <br>
+                <span>$20.55</span>
+                <span>Instalacion Gratis</span>
+                <div class="txt">
+                    <p>*Precio incluye IVA</p>
+                </div>
                 <button style="">¡Me interesa!</button>
             </div>
 
             <div class="card">
                 <h3>Plan Estándar</h3>
-                <h1>80</h1>
+                <h1>70</h1>
                 <p>MEGAS</p>
-                <span>$17.86 + IVA</span> <br>
+                <span>$25.75</span>
+                <span>Instalacion Gratis</span>
+                <div class="txt">
+                    <p>*Precio incluye IVA</p>
+                </div>
                 <button>¡Me interesa!</button>
             </div>
 
@@ -59,7 +67,11 @@
                 <h3>Plan Plus</h3>
                 <h1>100</h1>
                 <p>MEGAS</p>
-                <span>$17.86 + IVA</span> <br>
+                <span>$30.55</span>
+                <span>Instalacion Gratis</span>
+                <div class="txt">
+                    <p>*Precio incluye IVA</p>
+                </div>
                 <button>¡Me interesa!</button>
             </div>
 
@@ -67,24 +79,29 @@
     </section>
 
 <!-- FORMULARIO -->
-
-<section class="contacto" id="contacto">
-<h2>Sé parte de nosotros</h2>
-<form>
-<input type="text" placeholder="Nombre">
-<input type="text" placeholder="Teléfono">
-<input type="text" placeholder="Ciudad">
-<label>
-<input type="checkbox">
-Acepto los términos y condiciones
-</label>
-<label>
-<input type="checkbox">
-Acepto la política de privacidad
-</label>
-<button>Contratar</button>
-</form>
+<section class="planes">
+    <h2>Sé parte de nosotros</h2>
+    <section class="contacto" id="contacto">
+    <form>
+        <section class="inputContent">
+            <input type="text" placeholder="Nombre">
+            <input type="text" placeholder="Teléfono">
+            <input type="text" placeholder="Ciudad">
+        </section>        
+        <label style="justify-self:start;">
+            <input type="checkbox">
+                Acepto los términos y condiciones
+        </label>
+        <label style="justify-self:start;">
+            <input type="checkbox">
+                Acepto la política de privacidad
+        </label>
+        <button>Contratar</button>
+    </form>
 </section>
+
+ </section>
+
 <!-- MAPA -->
 
 <section class="mapa">
@@ -97,7 +114,7 @@ Acepto la política de privacidad
 </section>
 
 <!-- FAQ -->
-<section class="content-txt" id="Preguntas frecuentes">
+<section class="content-txt">
     <h2>Preguntas frecuentes</h2>
 </section>
     <section class="faq" id="faq">
