@@ -1,0 +1,257 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+.logo{
+    width: 60px;
+    height: 60px;
+}
+
+body{
+background:#fff;
+color:#222;
+}
+
+nav{
+height:70px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+}
+
+nav ul{
+
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav a{
+
+text-decoration:none;
+color:#444;
+}
+
+
+.hero{
+background-image:url('../img/bannerPrincipal.png');
+background-size:cover;
+display:flex;
+justify-content:space-between;
+align-items:end;
+padding:50px 8%;
+height:calc(100vh - 80px);
+}
+
+.hero-info{
+
+width:90%;
+}
+
+.hero h1{
+font-family: "Fira sans", sans-serif;
+font-size:70px;
+color:#1E40AF;
+margin-bottom:15px;
+}
+
+.hero h2{
+font-family: "Inter", sans-serif;
+color:#1E8A2F;
+margin-bottom:20px;
+text-shadow:
+        0 0 5px #ffffff,
+        0 0 5px #ffffff;
+}
+
+.hero p{
+    font-family: "Inter", sans-serif;
+font-size:22px;
+margin-bottom:40px;
+}
+
+/*.hero-image img{
+
+width:500px;
+border-radius:10px;
+}*/
+
+.btn{
+    display:inline-block;
+    background:#1E8A2F;
+    color:white;
+    padding:14px 28px;
+    text-decoration:none;
+    border-radius:30px;
+}
+
+.hero-buttons{
+    gap:20px;
+}
+
+.btn-outline{
+    margin-top:5px;
+    display:inline-block;
+    padding:14px 28px;
+    border:2px solid #1E8A2F;
+    text-decoration:none;
+    border-radius:30px;
+    color:#1E8A2F;  
+}
+.banner{
+    align-items: center;
+    background-image: url(../img/BannerModelo.png);
+    background-size:cover;
+    background-position:center 0;
+    margin:3% auto;
+    height:calc(100vh - 80px);
+    padding:30px 30px;
+    min-width:max-content;
+    max-width: 650px;
+    max-height: 130px;
+}
+.banner h1{
+    text-align: center;
+    color: #4946ff ;
+    font-size: auto;
+     text-shadow:
+        0 0 10px #4946ff,
+        0 0 40px #4946ff;
+
+}
+.banner p{
+    text-align: center;
+    color:white;
+    font-size:auto;
+}
+.banner img{
+
+width:80%;
+}
+
+.planes{
+padding:60px 8%;
+text-align:center;
+}
+
+.cards{
+    display: flex;
+    gap: clamp(15px, 3vw, 40px);
+    display:grid; 
+    grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); 
+    margin-top:40px;
+}
+
+.card{
+    border:1px solid #ccc;
+    padding:20px;
+    height:610px;
+    max-width: 310px;
+    display:flex;
+    flex-direction:column;
+}
+
+.card h3{
+    font-family: "Momo Trust Display", sans-serif;
+    background:#198f2d;
+    color:white;
+    padding:12px;
+    margin:-20px -20px 20px;
+}
+/*Cantidad de megas*/
+.card h1{
+    font-family: "Momo Trust Display", sans-serif;
+    font-size:80px;
+}
+.card p{
+    font-family: "Momo Trust Display", sans-serif;
+    font-size: 20px;
+}
+.card button{
+    margin-top:auto;
+    padding:12px 30px;
+    background:gold;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+.contacto{
+
+padding:70px 8%;
+}
+
+.contacto form{
+
+display:grid;
+gap:20px;
+}
+
+input{
+
+padding:14px;
+}
+
+button{
+
+cursor:pointer;
+}
+
+.mapa{
+
+padding:70px 8%;
+text-align:center;
+}
+
+iframe{
+
+width:100%;
+height:450px;
+border:0;
+}
+.content-txt{
+    padding:70px 8%;
+    text-align:center;
+
+}
+
+.faq{
+    border-radius:50px;
+    width:85%;
+    padding:50px 80px;
+    margin:auto;
+    background-color:#dff8ff;
+}
+
+.accordion{
+width:100%;
+padding:18px 0px;
+text-align:left;
+border:none;
+background:#dff8ff;
+font-size:18px;
+cursor:pointer;
+margin-top:15px;
+}
+
+.panel{
+
+display:none;
+padding:20px;
+background:white;
+border:1px solid #ddd;
+border-radius:15px;
+}
+
+footer{
+
+background:#0D3D80;
+color:white;
+padding:50px 8%;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+}
