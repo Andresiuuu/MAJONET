@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Majonet</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Momo+Trust+Display&display=swap" rel="stylesheet">
@@ -14,7 +21,7 @@
     <!-- HERO -->
 <section class="hero">
     <div class="hero-info">
-        <h1>Majonet</h1>
+        <h1>Majonet <span class="sas">S.A.S</span></h1>
         <h2>Internet de alta velocidad por fibra óptica</h2>
         <p>
             Estudio | Entretenimiento | Hogares | Empresas
@@ -48,7 +55,7 @@
                 <div class="txt">
                     <p>*Precio incluye IVA</p>
                 </div>
-                <button style="">¡Me interesa!</button>
+                <a href="#contacto" class="buttonCard">¡Me interesa!</a>
             </div>
 
             <div class="card">
@@ -60,7 +67,7 @@
                 <div class="txt">
                     <p>*Precio incluye IVA</p>
                 </div>
-                <button>¡Me interesa!</button>
+                <a href="#contacto" class="buttonCard">¡Me interesa!</a>
             </div>
 
             <div class="card">
@@ -72,31 +79,48 @@
                 <div class="txt">
                     <p>*Precio incluye IVA</p>
                 </div>
-                <button>¡Me interesa!</button>
+                <a href="#contacto" class="buttonCard">¡Me interesa!</a>
+            </div>
+
+            <div class="card-zapping">
+                <h3>ZAPPING</h3>
+                <h1>100</h1>
+                <p>MEGAS</p>
+                <span>$30.55</span>
+                <span>Instalacion Gratis</span>
+                <div class="txt">
+                    <p>*Precio incluye IVA</p>
+                </div>
+                <a href="#contacto" class="buttonCard">¡Me interesa!</a>
             </div>
 
         </div>
     </section>
 
 <!-- FORMULARIO -->
-<section class="planes">
-    <h2>Sé parte de nosotros</h2>
-    <section class="contacto" id="contacto">
-    <form>
+<section class="planes" id="contacto">
+    <h2>Sé parte de nosotros</h2> <br> <br>
+    <section class="contacto">
+    <?php if (isset($_SESSION['mensaje'])): ?>
+        <div class="alerta alerta-<?= htmlspecialchars($_SESSION['tipo']) ?>"><?= htmlspecialchars($_SESSION['mensaje']) ?></div>
+        <?php unset($_SESSION['mensaje'], $_SESSION['tipo']); ?>
+    <?php endif; ?>
+    <form action="enviar-formulario.php" method="POST">
         <section class="inputContent">
-            <input type="text" placeholder="Nombre">
-            <input type="text" placeholder="Teléfono">
-            <input type="text" placeholder="Ciudad">
+            <input type="text" name="nombre" placeholder="Nombre" required maxlength="100">
+            <input type="text" name="telefono" placeholder="Teléfono" required maxlength="15">
+            <input type="text" name="ciudad" placeholder="Ciudad" required maxlength="50">
         </section>        
         <label style="justify-self:start;">
-            <input type="checkbox">
+            <input type="checkbox" name="terminos" value="1" required>
                 Acepto los términos y condiciones
         </label>
         <label style="justify-self:start;">
-            <input type="checkbox">
+            <input type="checkbox" name="privacidad" value="1" required>
                 Acepto la política de privacidad
         </label>
-        <button>Contratar</button>
+        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
+        <button type="submit">Contratar</button>
     </form>
 </section>
 
@@ -114,10 +138,10 @@
 </section>
 
 <!-- FAQ -->
-<section class="content-txt">
+<section class="content-txt" id="faq">
     <h2>Preguntas frecuentes</h2>
 </section>
-    <section class="faq" id="faq">
+    <section class="faq">
             <div class="pregunta">
                 <button class="accordion">
                     ¿Qué hacer si me quedo sin internet?
