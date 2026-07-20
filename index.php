@@ -5,7 +5,7 @@ if (empty($_SESSION['csrf_token'])) {
 }
 
 $pagina = isset($_GET['page']) ? $_GET['page'] : 'inicio';
-$paginas_permitidas = ['inicio', 'sobre-nosotros', 'contacto', 'preguntas', 'terminos'];
+$paginas_permitidas = ['inicio', 'sobre-nosotros', 'contacto', 'preguntas', 'terminos', 'privacidad'];
 if (!in_array($pagina, $paginas_permitidas)) {
     $pagina = 'inicio';
 }
@@ -16,6 +16,7 @@ $titulos = [
     'contacto' => 'Contacto - Majonet',
     'preguntas' => 'Preguntas frecuentes - Majonet',
     'terminos' => 'Términos y condiciones - Majonet',
+    'privacidad' => 'Política de privacidad - Majonet',
 ];
 $titulo = $titulos[$pagina];
 ?>
@@ -133,12 +134,12 @@ $titulo = $titulos[$pagina];
                     <input type="text" name="ciudad" placeholder="Ciudad" required maxlength="50">
                 </section>        
                 <label style="justify-self:start;">
-                    <input type="checkbox" name="terminos" value="1" required>
-                        He leido y estoy de acuerdo con los <span><a href="?page=terminos">Terminos y condiciones</a></span>
+                    <input class="check" type="checkbox" name="terminos" value="1" required>
+                        He leido y estoy de acuerdo con los <span><a href="?page=terminos">terminos y condiciones</a></span>
                 </label>
                 <label style="justify-self:start;">
-                    <input type="checkbox" name="privacidad" value="1" required>
-                        Acepto la política de privacidad
+                    <input style="size:30px;" type="checkbox" name="privacidad" value="1" required>
+                        Acepto las <span><a href="?page=privacidad">politicas de privacidad</a></span>
                 </label>
                 <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
                 <button type="submit">Contratar</button>
@@ -182,7 +183,29 @@ $titulo = $titulos[$pagina];
                             </p>
                         </div>
                     </div>
+                    <div class="pregunta">
+                        <button class="accordion">
+                            ¿Qué planes de internet ofrecen?
+                        </button>
+                        <div class="panel">
+                            <p>
+                            Ofrecemos planes desde 60 megas hasta 100 megas con instalación gratis. Consulte nuestra sección de planes para más detalles.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pregunta">
+                        <button class="accordion">
+                            ¿Cómo puedo contratar el servicio?
+                        </button>
+                        <div class="panel">
+                            <p>
+                            Puede contactarnos a través de nuestro formulario, por teléfono o visitando nuestras oficinas en Junín.
+                            </p>
+                        </div>
+                    </div>
                 </div>
+                <div style="display:auto; width:100%; text-align:center;" class=""><a class ="btn" href="?page=preguntas">Ver todas las preguntas</a></div>
+
             </section>
 
         <?php else: ?>

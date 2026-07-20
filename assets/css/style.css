@@ -449,7 +449,6 @@ text-align:center;
     border-radius: 10px;
     }
 
-
 /*botón formulario*/
 .contacto button{
     justify-self:center;
@@ -498,6 +497,7 @@ iframe{
 }
 
 .accordion{
+    color: #176B24;
     width:100%;
     padding:18px 0px;
     text-align:left;
