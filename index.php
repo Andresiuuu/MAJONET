@@ -5,7 +5,7 @@ if (empty($_SESSION['csrf_token'])) {
 }
 
 $pagina = isset($_GET['page']) ? $_GET['page'] : 'inicio';
-$paginas_permitidas = ['inicio', 'sobre-nosotros', 'contacto', 'preguntas'];
+$paginas_permitidas = ['inicio', 'sobre-nosotros', 'contacto', 'preguntas', 'terminos'];
 if (!in_array($pagina, $paginas_permitidas)) {
     $pagina = 'inicio';
 }
@@ -15,6 +15,7 @@ $titulos = [
     'sobre-nosotros' => 'Sobre nosotros - Majonet',
     'contacto' => 'Contacto - Majonet',
     'preguntas' => 'Preguntas frecuentes - Majonet',
+    'terminos' => 'Términos y condiciones - Majonet',
 ];
 $titulo = $titulos[$pagina];
 ?>
@@ -133,7 +134,7 @@ $titulo = $titulos[$pagina];
                 </section>        
                 <label style="justify-self:start;">
                     <input type="checkbox" name="terminos" value="1" required>
-                        Acepto los términos y condiciones
+                        He leido y estoy de acuerdo con los <span><a href="?page=terminos">Terminos y condiciones</a></span>
                 </label>
                 <label style="justify-self:start;">
                     <input type="checkbox" name="privacidad" value="1" required>

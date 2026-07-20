@@ -16,7 +16,7 @@
             <h3><i data-lucide="file-text" class="footer-icon"></i> Normativas</h3>
             <ul>
                 <li><a href="#"><i data-lucide="shield" class="li-icon"></i> Protección de datos</a></li>
-                <li><a href="#"><i data-lucide="file-check" class="li-icon"></i> Términos y condiciones</a></li>
+                <li><a href="?page=terminos"><i data-lucide="file-check" class="li-icon"></i> Términos y condiciones</a></li>
                 <li><a href="#"><i data-lucide="lock" class="li-icon"></i> Política de privacidad</a></li>
             </ul>
         </div>

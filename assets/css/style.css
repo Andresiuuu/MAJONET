@@ -916,6 +916,96 @@ footer {
     margin-top: 4px;
 }
 
+/* Terminos page */
+.terminos-content {
+    max-width: 800px;
+}
+
+.terminos-intro {
+    background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+    border-radius: 20px;
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.terminos-intro-icon {
+    width: 40px;
+    height: 40px;
+    stroke-width: 1.5;
+    color: #1E40AF;
+    flex-shrink: 0;
+}
+
+.terminos-intro p {
+    color: #333;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.terminos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.termino {
+    display: flex;
+    gap: 20px;
+    background: #fff;
+    border: 1.5px solid #e8e8e8;
+    border-radius: 16px;
+    padding: 24px 28px;
+    transition: box-shadow 0.25s ease;
+}
+
+.termino:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.termino-num {
+    width: 36px;
+    height: 36px;
+    background: #1E40AF;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.termino-body h3 {
+    font-family: "Momo Trust Display", sans-serif;
+    font-size: 1.1rem;
+    color: #1E40AF;
+    margin-bottom: 8px;
+}
+
+.termino-body p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.92rem;
+    margin-bottom: 6px;
+}
+
+.termino-body ul {
+    margin: 6px 0 10px 20px;
+    color: #555;
+    line-height: 1.7;
+    font-size: 0.92rem;
+}
+
+.termino-body ul li {
+    margin-bottom: 2px;
+}
+
 @media (max-width: 768px) {
     .contact-grid {
         grid-template-columns: 1fr;
@@ -927,5 +1017,17 @@ footer {
 
     .page-title {
         font-size: 2rem;
+    }
+
+    .termino {
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px;
+    }
+
+    .terminos-intro {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
     }
 }
