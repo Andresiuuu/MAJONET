@@ -19,3 +19,14 @@ panel.style.display="block";
 });
 
 });
+//Script para el switch
+const switchTheme = document.getElementById("themeSwitch");
+
+switchTheme.addEventListener("change", () => {
+    if (switchTheme.checked) {
+        document.body.style.backgroundColor = "#111";
+    } else {
+        document.body.style.backgroundColor = "#fff";
+    }
+});
+console.log("main.js cargado");

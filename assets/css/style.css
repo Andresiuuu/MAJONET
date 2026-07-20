@@ -4,6 +4,14 @@ padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
+header{
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0);
+    z-index: 1000;
+}
+
+
 .logo{
     display: flex;
     align-items: center;
@@ -11,24 +19,71 @@ font-family:Arial,sans-serif;
 }
 .logo-text{
     display: inline;
-    font-family: "Inter", sans-serif;
+    font-family: "Momo Trust Display", sans-serif;
     font-size: 22px;
     color: #1E40AF;
     font-weight: bold;
     white-space: nowrap;
 }
 body{
-background:#fff;
-color:#222;
+    display: flex;
+    flex-direction: column;
+    background:#fff;
+    color:#222;
+    justify-content: center; /* Centra verticalmente */
+}
+
+/*Switch modo oscuro*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    inset: 0;
+    background: #ccc;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 4px;
+    bottom: 2px;
+    background: white;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+input:checked + .slider {
+    background: #030303;
+}
+
+input:checked + .slider::before {
+    transform: translateX(20px);
 }
 
 nav{
-height:70px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-}
+    
+    height:70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    box-shadow: 0px 18px 15px rgba(161, 161, 161, 0.26);
+    background-color: white;
+    }
 
 nav ul{
     display:flex;
@@ -58,6 +113,9 @@ nav a{
     width:min-content;
     height: min-content;
     color: green;
+    text-shadow:
+        0 0 5px #ffffff,
+        0 0 5px #ffffff;
     font-size: 20px;
     font-family: "Momo Trust Display", sans-serif;
 }
@@ -66,7 +124,7 @@ nav a{
     }
 /*h1 nombre de pagina*/
 .hero h1{
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     font-family: "Momo Trust Display", sans-serif;
     font-size:55px;
     color:#1E40AF;
@@ -85,7 +143,7 @@ text-shadow:
 .hero p{
     font-family: "Inter", sans-serif;
     font-size:22px;
-    margin-bottom:40px;
+    margin-bottom:3%;
     }
 
 /*.hero-image img{
@@ -101,22 +159,66 @@ border-radius:10px;
     padding:14px 28px;
     text-decoration:none;
     border-radius:30px;
+    transition: all 0.2s ease-in-out;
 }
+.btn:hover{
+    transform: translateY(-2px) translateX(-2px);
+    box-shadow: 3px 3px 12px rgb(184, 184, 184);
+}
+
 
 .hero-buttons{
     gap:20px;
 }
-.buttonCard{
-    text-decoration:none;
-    color: rgb(0, 0, 0);
+.buttonCard{ 
     align-self:center;
-    width: 200px;
-    margin-top:auto;
-    padding:12px 30px;
-    background:gold;
-    border:none;
-    border-radius:22px;
-    cursor:pointer;
+    width: 200px;    
+    padding: 12px 28px;
+    margin: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color:rgb(0, 0, 0);
+    background-image: linear-gradient(to bottom right, rgb(251, 255, 0), gold);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 0px rgb(219, 186, 0);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+}
+.buttonCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 0px rgb(219, 186, 0);
+}
+
+.buttonCard:active {
+  transform: translateY(0px);
+  box-shadow: none;
+  background-image: linear-gradient(to bottom right, rgb(206, 175, 1), rgb(250, 204, 0));
+}
+
+.buttonCard:before,
+.button:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.buttonCard:before {
+  top: -3px;
+  left: -3px;
+  border-radius: 40px;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+}
+
+.buttonCard:after {
+  bottom: -3px;
+  right: -3px;
+  border-radius: 40px;
+  border-bottom: 3px solid #fff;
+  border-right: 3px solid #fff;
 }
 .btn-outline{
     margin-top:5px;
@@ -126,6 +228,11 @@ border-radius:10px;
     text-decoration:none;
     border-radius:30px;
     color:#1E8A2F;  
+    transition:all 0.2s ease-in-out;
+}
+.btn-outline:hover{
+    transform: translateY(-2px) translateX(-2px);
+    box-shadow: 3px 3px 12px rgb(184, 184, 184);
 }
 .banner{
     background-image: url(../img/BannerModelo.png);
@@ -139,13 +246,18 @@ border-radius:10px;
     max-width:650px;
     height: 130px;
     border-radius:12px;
+    transition: all 0.2s ease;
+}
+.banner:hover{
 }
 .banner h1{
     text-align: center;
     color: #4946ff ;
     font-size: auto;
      text-shadow:
-        0 0 10px #4946ff,
+        0 0 5px #4946ff,
+        0 0 18px #4946ff,
+        0 0 30px #4946ff,
         0 0 40px #4946ff;
 
 }
@@ -160,7 +272,7 @@ width:80%;
 }
 
 .planes{
-padding:60px 8%;
+margin-top: 60px;
 text-align:center;
 }
 
@@ -168,17 +280,29 @@ text-align:center;
     display:grid;
     grid-template-columns:repeat(auto-fit,310px);
     justify-content:center;
-    gap:100px;
+    gap:90px;
+    padding: 0% 3%;
 }
 
 .card{
+    background-color: white;
     margin-top: 40px;
-    border:1px solid #a3a3a3;
+    border:2px solid #a3a3a3;
     padding:20px;
         height:610px;
     display:flex;
-    flex-direction:column;    
+    flex-direction:column;  
+    border-radius: 19px;
+    transition: all 0.2s ease;
 }
+.card:hover {
+    border: 2px solid #1E8A2F;
+    transform: translateY(-2px) translateX(-2px);
+    box-shadow: 10px 10px 12px rgba(172, 172, 170, 0.171);
+}
+
+
+
 
 .card h3{
     font-family: "Momo Trust Display", sans-serif;
@@ -186,6 +310,8 @@ text-align:center;
     color:white;
     padding:12px;
     margin:-20px -20px 20px;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
 }
 /*Cantidad de megas*/
 .card h1{
@@ -206,6 +332,64 @@ text-align:center;
     font-size: 18px;
     border-bottom:1px solid #a3a3a3;
 }
+
+/*Card del servicio de zapping*/
+.card-zapping{
+    background-color: white;
+    margin-top: 40px;
+    border:1px solid #a3a3a3;
+    padding:20px;
+        height:610px;
+    display:flex;
+    flex-direction:column;
+    border-radius: 15px;
+    transition: all 0.2s ease;
+}
+.card-zapping:hover {
+    border:2px solid #ff4800;
+    transform: translateY(-2px) translateX(-2px);
+    box-shadow: 10px 10px 12px rgba(172, 172, 170, 0.171);
+}
+/*Titulo del servicio*/
+.card-zapping h3{
+    background:#020202;
+    padding:12px;
+    margin:-20px -20px 20px;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+.card-zapping h3 span{
+    border-bottom: none;
+    font-size: 30px;
+    font-family: "Momo Trust Display", sans-serif;
+    background: linear-gradient(to right, #ff4800, #ffee00);
+    background-clip: text;
+    -webkit-background-clip: text; /* Compatibilidad con Chrome, Edge y Safari */
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+/*Cantidad de megas*/
+.card-zapping h1{
+
+    font-family: "Momo Trust Display", sans-serif;
+    font-size:80px;
+} 
+/*Palabra "MEGAS"*/
+.card-zapping p{
+    font-family: "Momo Trust Display", sans-serif;
+    font-size: 20px;
+}
+/* Precio y linea    */
+.card-zapping span{
+    margin-top: auto    ;
+    height: 35px;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    border-bottom:1px solid #a3a3a3;
+}
+
 /*Contenedor de texto puesto al final de la card*/
 .txt{
     margin-top: 80%;
@@ -231,7 +415,7 @@ text-align:center;
 /*Formulario de contacto*/
 
 .contacto{
-    width: 100%;
+    width: 90%;
     border-radius:50px;
     padding:50px 80px;
     margin:auto;
@@ -301,11 +485,11 @@ iframe{
 .faq{
     height:min-content;
     border-radius:50px;
-    width:85%;
+    width:90%;
     padding: 40px 10%;
     margin:auto;
     background-color:#dff8ff;
-    }
+}
 
 .accordion{
     width:100%;
@@ -345,11 +529,14 @@ iframe{
 }
 
 footer{
-    margin-top: 25px;
-    background:#0D3D80;
+    text-align: center;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    margin-top: 120px;
+    background:#061c3a;
     color:white;
     padding:50px 8%;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:30px;
-    }
+    gap: 28px;
+}

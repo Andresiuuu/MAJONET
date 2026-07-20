@@ -1,9 +1,92 @@
+/*Si la pantalla es mas pequeña cambian estas propiedades*/
 @media (max-width: 768px) {
+    /*hero*/
+    .hero{
+        padding: 20% 8%;
+        height:calc(60vh - 80px);
+    }
+    /*Parrafo de hero*/
+    .hero p{
+            margin-bottom:5%;
+        }
+    /*h1 de hero*/
+    .hero h1{
+        margin-bottom:10%;
+    }    
+}
+
+@media (max-width: 390px) {
+   /*Texto al lado del logo del header*/
     .logo-text {
         display: none;
-    }
+        }
+    /*hero*/
     .hero{
         background-image:none;
-        
+        padding: 10% 8%;
+        height: 85%;
+        }
+    .card{
+        box-shadow: 10px 10px 12px rgb(199, 199, 199);
+    }
+    .card:hover{
+        transform: none;
+    }
+    .card-zapping{
+        box-shadow: 10px 10px 12px rgb(172, 172, 170);
+    }
+    .card-zapping:hover{
+        transform: none;
+    }
+    /*Contenedor de tarjetas*/
+    .cards{    
+    grid-template-columns:repeat(auto-fit, 90%);    
+    }
+    /*Contenedor de seccion de contacto*/
+    .contacto{
+        width: 100%;
+    }
+    /*Seccion de entrada de datos de contacto*/
+    .faq{
+        width: 100%;
+    }
+    /*Parrafo de hero*/
+    .hero p{
+            margin-bottom:5%;
+        }
+    /*hq de hero*/
+    .hero h1{
+        margin-bottom:3%;
     }
 }
+
+/*Si la altura excede esta cantidad de pixeles*/
+@media (max-height: 390px){
+    /*hero*/
+    .hero{
+        padding: 0% 8%;
+        height: 100%;
+    }    
+}
+/*Si el ancho es menor a esta cantidad de pixeles*/
+@media (min-width: 1300px){
+    /*padding del cuerpo contenedor de la pagina*/
+    body{
+        padding: 0% 15%;        
+    }
+
+    /*Hero*/
+    .hero{
+        border-radius: 40px;
+    }
+    nav{
+        padding: 0px 2%;
+        margin-top:15px;
+        box-shadow: 0px 18px 15px rgba(161, 161, 161, 0.26);
+        border-radius: 22px;
+    }
+    footer{
+        height: 400px;
+    }
+}
+     
