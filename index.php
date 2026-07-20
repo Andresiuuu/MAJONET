@@ -15,6 +15,7 @@ if (empty($_SESSION['csrf_token'])) {
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Momo+Trust+Display&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/lucide@latest"></script>
         <style>html{scroll-behavior:smooth;}</style>
     </head>
     <body>
@@ -174,6 +175,8 @@ if (empty($_SESSION['csrf_token'])) {
                 </div>
             </section>
             <script src="assets/js/main.js"></script>
-            <?php include 'includes/footer.php'; ?>        
+            <?php include 'includes/footer.php'; ?>
+            <script>lucide.createIcons();</script>
+        
     </body>
 </html>

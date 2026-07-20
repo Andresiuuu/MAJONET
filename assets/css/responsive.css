@@ -12,7 +12,16 @@
     /*h1 de hero*/
     .hero h1{
         margin-bottom:10%;
-    }    
+    }
+
+    footer {
+        padding: 40px 6% 0;
+    }
+
+    .footer-grid {
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
 }
 
 @media (max-width: 390px) {
@@ -85,8 +94,8 @@
         box-shadow: 0px 18px 15px rgba(161, 161, 161, 0.26);
         border-radius: 22px;
     }
-    footer{
-        height: 400px;
+    footer {
+        padding: 80px 8% 0;
     }
 }
      
