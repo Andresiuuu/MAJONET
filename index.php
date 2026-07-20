@@ -3,13 +3,27 @@ session_start();
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
+
+$pagina = isset($_GET['page']) ? $_GET['page'] : 'inicio';
+$paginas_permitidas = ['inicio', 'sobre-nosotros', 'contacto', 'preguntas'];
+if (!in_array($pagina, $paginas_permitidas)) {
+    $pagina = 'inicio';
+}
+
+$titulos = [
+    'inicio' => 'Majonet',
+    'sobre-nosotros' => 'Sobre nosotros - Majonet',
+    'contacto' => 'Contacto - Majonet',
+    'preguntas' => 'Preguntas frecuentes - Majonet',
+];
+$titulo = $titulos[$pagina];
 ?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Majonet</title>
+        <title><?= htmlspecialchars($titulo) ?></title>
         <link rel="stylesheet" href="assets/css/style.css?v=<?= filemtime('assets/css/style.css') ?>">
         <link rel="stylesheet" href="assets/css/responsive.css?v=<?= filemtime('assets/css/responsive.css') ?>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +34,10 @@ if (empty($_SESSION['csrf_token'])) {
     </head>
     <body>
             <?php include 'includes/header.php'; ?>
-            <!-- HERO -->
+
+        <?php if ($pagina === 'inicio'): ?>
+
+        <!-- HERO -->
         <section class="hero" id="inicio">
             <div class="hero-info">
                 <h1>Majonet <span class="sas">S.A.S</span></h1>
@@ -33,17 +50,14 @@ if (empty($_SESSION['csrf_token'])) {
                         <a href="#faq" class="btn-outline">Preguntas frecuentes</a>            
                 </div>    
             </div>
-            <!-- <div class="hero-image">
-                <img src="assets/img/bannerPrincipal.png" alt="Imagen de internet de alta velocidad">
-            </div>-->
         </section>
 
         <!-- BANNER -->
-
         <section class="banner" id="planes"> 
         <h1 >INSTALACION GRATIS</h1>
         <p>En todos nuestros planes</p>
         </section>
+
         <!-- PLANES -->
             <section class="planes">
             <h2>Planes y promociones</h2>
@@ -57,8 +71,6 @@ if (empty($_SESSION['csrf_token'])) {
                         <div class="txt">
                             <p>*Precio incluye IVA</p>
                         </div>
-                        
-                        
                         <a href="#contacto" class="buttonCard">¡Me interesa!</a>
                     </div>
 
@@ -106,8 +118,6 @@ if (empty($_SESSION['csrf_token'])) {
             <br><br>
         </section>
 
-
-
         <section class="planes">
             <h2>Sé parte de nosotros</h2> <br> <br>
             <section class="contacto">
@@ -137,7 +147,6 @@ if (empty($_SESSION['csrf_token'])) {
         </section>
 
         <!-- MAPA -->
-
         <section class="mapa">
             <section class="content-txt" id="Encuéntranos aquí">
                 <h2>Encuéntranos aquí</h2>
@@ -174,6 +183,10 @@ if (empty($_SESSION['csrf_token'])) {
                     </div>
                 </div>
             </section>
+
+        <?php else: ?>
+            <?php include "includes/pages/$pagina.php"; ?>
+        <?php endif; ?>
             <script src="assets/js/main.js"></script>
             <?php include 'includes/footer.php'; ?>
             <script>lucide.createIcons();</script>

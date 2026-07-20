@@ -34,6 +34,14 @@
                 <i data-lucide="map-pin" class="contact-icon"></i>
                 <span>Junin-Manabí-Ecuador</span>
             </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/majonet.es" target="_blank" rel="noopener">
+                    <img src="assets/icons/logo-facebook.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://wa.me/593991268129" target="_blank" rel="noopener">
+                    <img src="assets/icons/logo-whatsapp.png" alt="WhatsApp" class="social-icon">
+                </a>
+            </div>
         </div>
     </div>
     <div class="footer-bottom">
