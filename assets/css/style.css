@@ -1185,3 +1185,31 @@ footer {
     flex-direction: column;
     align-items: center;
 }
+
+/* Whatsapp flotante */
+.whatsapp-float {
+    position: fixed;
+    bottom: 60px;
+    right: 7%;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #fbfcfb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(197, 197, 197, 0.527);
+    z-index: 999;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.55);
+}
+
+.whatsapp-float img {
+    width: 28px;
+    height: 28px;
+    display: block;
+}

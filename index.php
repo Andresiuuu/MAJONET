@@ -222,6 +222,8 @@ $titulo = $titulos[$pagina];
             <script src="assets/js/main.js"></script>
             <?php include 'includes/footer.php'; ?>
             <script>lucide.createIcons();</script>
-        
+            <a href="https://wa.me/593991268129" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
+                <img src="assets/icons/logo-whatsapp.png" alt="WhatsApp">
+            </a>
     </body>
 </html>
