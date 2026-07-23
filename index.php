@@ -1,12 +1,12 @@
 <?php
-session_start();
-if (empty($_SESSION['csrf_token'])) {
+    session_start();
+    if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 
 $pagina = isset($_GET['page']) ? $_GET['page'] : 'inicio';
-$paginas_permitidas = ['inicio', 'sobre-nosotros', 'contacto', 'preguntas', 'terminos', 'privacidad'];
-if (!in_array($pagina, $paginas_permitidas)) {
+    $paginas_permitidas = ['inicio', 'sobre-nosotros', 'contacto', 'preguntas', 'terminos', 'privacidad'];
+    if (!in_array($pagina, $paginas_permitidas)) {
     $pagina = 'inicio';
 }
 
@@ -35,7 +35,8 @@ $titulo = $titulos[$pagina];
         <style>html{scroll-behavior:smooth;}</style>
     </head>
     <body>
-            <?php include 'includes/header.php'; ?>
+
+        <?php include 'includes/header.php'; ?>
 
         <?php if ($pagina === 'inicio'): ?>
 
@@ -68,7 +69,7 @@ $titulo = $titulos[$pagina];
                         <h3>Plan Básico</h3>
                         <h1>60</h1>
                         <p>MEGAS</p>
-                        <span>$20.55</span>
+                        <span>$20.55/mes</span>
                         <span>Instalacion Gratis</span>
                         <div class="txt">
                             <p>*Precio incluye IVA</p>
@@ -80,7 +81,7 @@ $titulo = $titulos[$pagina];
                         <h3>Plan Estándar</h3>
                         <h1>70</h1>
                         <p>MEGAS</p>
-                        <span>$25.75</span>
+                        <span>$25.75/mes</span>
                         <span>Instalacion Gratis</span>
                         <div class="txt">
                             <p>*Precio incluye IVA</p>
@@ -92,7 +93,7 @@ $titulo = $titulos[$pagina];
                         <h3>Plan Plus</h3>
                         <h1>100</h1>
                         <p>MEGAS</p>
-                        <span>$30.55</span>
+                        <span>$30.55/mes</span>
                         <span>Instalacion Gratis</span>
                         <div class="txt">
                             <p>*Precio incluye IVA</p>
@@ -104,8 +105,8 @@ $titulo = $titulos[$pagina];
                         <h3><span>ZAPPING</span></h3>
                         <h1>52</h1>
                         <p>CANALES</p>
-                        <span>$5.25</span>
-                        <span>Agregar informacion</span>
+                        <span>$5.25/mes</span>
+                        <span>Televisión en vivo por internet</span>
                         <div class="txt">
                             <p>*Precio incluye IVA</p>
                         </div>
@@ -133,11 +134,11 @@ $titulo = $titulos[$pagina];
                     <input type="text" name="telefono" placeholder="Teléfono" required maxlength="15">
                     <input type="text" name="ciudad" placeholder="Ciudad" required maxlength="50">
                 </section>        
-                <label style="justify-self:start;">
+                <label style="text-align:left;">
                     <input class="check" type="checkbox" name="terminos" value="1" required>
                         He leido y estoy de acuerdo con los <span><a href="?page=terminos">terminos y condiciones</a></span>
                 </label>
-                <label style="justify-self:start;">
+                <label style="text-align:left;">
                     <input style="size:30px;" type="checkbox" name="privacidad" value="1" required>
                         Acepto las <span><a href="?page=privacidad">politicas de privacidad</a></span>
                 </label>
@@ -148,20 +149,18 @@ $titulo = $titulos[$pagina];
 
         </section>
 
-        <!-- MAPA -->
+        <!-- MAPA 
         <section class="mapa">
             <section class="content-txt" id="Encuéntranos aquí">
                 <h2>Encuéntranos aquí</h2>
             </section>
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d249.3309546641249!2d-80.20607872376712!3d-0.9277599909425598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sec!4v1783697913958!5m2!1ses!2sec" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
-                </iframe>
         </section>
-
+        -->
         <!-- FAQ -->
         <section class="content-txt" id="faq">
             <h2>Preguntas frecuentes</h2>
         </section>
+        <section class="content-faq-map">
             <section class="faq">
                     <div class="pregunta">
                         <button class="accordion">
@@ -205,8 +204,17 @@ $titulo = $titulos[$pagina];
                     </div>
                 </div>
                 <div style="display:auto; width:100%; text-align:center;" class=""><a class ="btn" href="?page=preguntas">Ver todas las preguntas</a></div>
-
             </section>
+            <div id="content-map" class="content-map">
+                <h3>Encuentranos aquí</h3>
+                <iframe class="iframe1"
+                src="https://www.google.com/maps?q=-0.9277629850168421, -80.2060910849771&output=embed">
+                </iframe> 
+                <a href="https://www.google.com/maps?q=-0.9277629850168421, -80.2060910849771" style="text-decoration: none;" target="_blank">Abrir mapa</a>
+            </div>
+                       
+        </section>
+            
 
         <?php else: ?>
             <?php include "includes/pages/$pagina.php"; ?>

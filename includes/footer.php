@@ -7,9 +7,9 @@
         <div class="footer-col">
             <h3><i data-lucide="signal" class="footer-icon"></i> Servicios</h3>
             <ul>
-                <li><a href="#contacto"><i data-lucide="home" class="li-icon"></i> Internet Hogar</a></li>
-                <li><a href="#contacto"><i data-lucide="building2" class="li-icon"></i> Internet Empresas</a></li>
-                <li><a href="#contacto"><i data-lucide="tv" class="li-icon"></i> Televisión Zapping</a></li>
+                <li><a href="index.php#contacto"><i data-lucide="home" class="li-icon"></i> Internet Hogar</a></li>
+                <li><a href="index.php#contacto"><i data-lucide="building2" class="li-icon"></i> Internet Empresas</a></li>
+                <li><a href="index.php#contacto"><i data-lucide="tv" class="li-icon"></i> Televisión Zapping</a></li>
             </ul>
         </div>
         <div class="footer-col">

@@ -1,5 +1,16 @@
 /*Si la pantalla es mas pequeña cambian estas propiedades*/
 @media (max-width: 768px) {
+    .content-faq-map{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    }
+    nav ul{
+        font-size: 16px;
+    }
+    nav{
+        padding:8px 8%;
+    }
     /*hero*/
     .hero{
         padding: 20% 8%;
@@ -24,11 +35,30 @@
     }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 730px) {
    /*Texto al lado del logo del header*/
-    .logo-text {
+    nav{
+        padding:8px 8%;
+    }
+    .nav-links {
         display: none;
-        }
+    }
+    .hamburger {
+        display: flex;
+    }
+    /*
+    .overlay {
+        display: block;
+    }
+    */
+    .sidebar {
+        display: flex;
+        right: -280px;
+    }
+    .sidebar.active {
+        right: 0;
+    }
+
     /*hero*/
     .hero{
         background-image:none;
@@ -47,16 +77,14 @@
     .card-zapping:hover{
         transform: none;
     }
-    /*Contenedor de tarjetas*/
-    .cards{    
-    grid-template-columns:repeat(auto-fit, 90%);    
-    }
+    
     /*Contenedor de seccion de contacto*/
     .contacto{
         width: 100%;
     }
     /*Seccion de entrada de datos de contacto*/
     .faq{
+        margin-bottom: 30px;
         width: 100%;
     }
     /*Parrafo de hero*/
@@ -68,6 +96,11 @@
         margin-bottom:3%;
     }
 }
+@media (max-width: 390px){
+    .iframe1{
+       width:340px; height:320px;
+    }
+}
 
 /*Si la altura excede esta cantidad de pixeles*/
 @media (max-height: 390px){
@@ -75,13 +108,15 @@
     .hero{
         padding: 0% 8%;
         height: 100%;
-    }    
+    }
+        
 }
 /*Si el ancho es menor a esta cantidad de pixeles*/
 @media (min-width: 1300px){
     /*padding del cuerpo contenedor de la pagina*/
     body{
-        padding: 0% 15%;        
+        background-color: #F5F5F7;
+        padding: 0% 12%;        
     }
 
     /*Hero*/
@@ -89,7 +124,8 @@
         border-radius: 40px;
     }
     nav{
-        padding: 0px 2%;
+        height: 76px;
+        padding: 1px 2%;
         margin-top:15px;
         box-shadow: 0px 18px 15px rgba(161, 161, 161, 0.26);
         border-radius: 22px;

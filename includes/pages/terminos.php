@@ -16,7 +16,7 @@
             <div class="termino">
                 <div class="termino-num">2</div>
                 <div class="termino-body">
-                    <h3>Objeto del sitio web</h3>
+                    <h3>Objetivo del sitio web</h3>
                     <p>Este portal tiene como finalidad:</p>
                     <ul>
                         <li>Informar sobre los planes de Internet disponibles.</li>

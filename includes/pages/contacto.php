@@ -4,7 +4,7 @@
         <div class="contact-grid">
             <div class="contact-info">
                 <h2>Estamos para servirte</h2>
-                <p>Comunícate con nosotros por cualquiera de nuestros canales y te atenderemos a la brevedad.</p>
+                <p>Comunícate con nosotros por cualquiera de nuestros canales y te atenderemos a la brevedad.<br><br><span style="font-style:italic; font-size:14px;">Horarios de atencion: Lunes a viernes 09:00h-17:00h</span></p>
                 <div class="contact-detail">
                     <i data-lucide="phone" class="detail-icon"></i>
                     <div>
