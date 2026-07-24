@@ -1,5 +1,5 @@
 <nav>
-    <a href="#" class="logo">
+    <a href="index.php#" class="logo">
         <img style="width: 60px; height: 60px;" src="assets/img/Logo.png" >
         <span class="logo-text">Majonet <span style="color:green; font-size:14px; font-family: Momo Trust Display, sans-serif;">S.A.S</span></span>
     </a>

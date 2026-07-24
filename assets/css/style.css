@@ -1,8 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
+}
+:root{
+    --color-text-btn: #ffffff;
+    --card1-gradient-color1: #1E40AF;
+    --card1-gradient-color2: #1E8A2F;
+    --card2-gradient-color1: #7F00FF;
+    --card2-gradient-color2: #E100FF;
+    --card3-gradient-color1: #3f2b96;
+    --card3-gradient-color2: #a8c0ff;
+    --card4-gradient-color1: #11998e;
+    --card4-gradient-color2: #38ef7d;
 }
 header{
     height: 5%;
@@ -15,7 +27,31 @@ header{
 header.hidden {
     transform: translateY(-100%);
 }
-
+.page-aboutUs{
+}
+.hover-aboutUs{
+    align-content: center;
+    height: 900px;
+}
+.page-aboutUs-title{
+    display: inline;
+    color: white;
+    font-size: 96px;
+    width: max-content;
+    font-family: "Momo Trust Display", sans-serif;
+}
+.hover-aboutUs p{
+    font-family: "Momo Trust Display", sans-serif;
+    font-size: 32px;
+    color: white;
+}
+.page-aboutUs::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../img/img-aboutUs.jpg") top / cover no-repeat rgba(0, 0, 0, 0.123);
+    z-index: -1;
+}
 
 .logo{
     display: flex;
@@ -81,7 +117,7 @@ input:checked + .slider::before {
     transform: translateX(20px);
 }
 .iframe1{
-    border:2px solid black; 
+    border:2px solid rgb(204, 204, 204); 
     border-radius:100%; 
     width:380px; 
     height:355px;
@@ -307,14 +343,104 @@ margin-top: 60px;
 text-align:center;
 }
 
+
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,310px);
+    grid-template-columns:repeat(auto-fit,270px);
     justify-content:center;
     gap:90px;
-    padding: 0% 3%;
+    padding: 5% 3%;
+}
+.card-wrap{
+    height: min-content;
+    width: 270px;
+    background: #fff;
+    border-radius: 20px;
+    border: 5px solid #ececec;
+    verflow: hidden;
+    color: var(--color-text);
+    cursor:default;
+    transition: all .3s ease;
+}
+.card-wrap:hover{
+    border-color: white;
+    background: #F5F5F7;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+                rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transform: scale(1.1);
+}
+.card-header{
+    height: 200px;
+    width: 100%;
+    background: red;
+    border-radius:100% 0% 100% 0% / 0% 50% 50% 100%;
+    display: grid;
+    place-items: center;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+.card-header i{
+  color: #fff;
+  font-size: 72px;
+}
+.card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+}
+.card-title{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  
+}
+.card-text{
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.card-btn{
+  border: none;
+  border-radius: 100px;
+  padding: 5px 30px;
+  color: #fff;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.card-header.one{
+  background: linear-gradient(to bottom left, var(--card1-gradient-color1), var(--card1-gradient-color2));
+}
+.card-header.two{
+  background: linear-gradient(to bottom left, var(--card2-gradient-color1), var(--card2-gradient-color2));
+}
+.card-header.three{
+  background: linear-gradient(to bottom left, var(--card3-gradient-color1), var(--card3-gradient-color2));
+}
+.card-header.four{
+  background: linear-gradient(to bottom left, var(--card4-gradient-color1), var(--card4-gradient-color2));
 }
 
+.card-btn.one{
+    padding: 3% 11%;
+    width: max-content;
+    font-size: 14px;
+    text-decoration: none;
+    background: linear-gradient(to left, var(--card1-gradient-color1), var(--card1-gradient-color2));
+}
+.card-btn.two{
+  background: linear-gradient(to left, var(--card2-gradient-color1), var(--card2-gradient-color2));
+}
+.card-btn.three{
+  background: linear-gradient(to left, var(--card3-gradient-color1), var(--card3-gradient-color2));
+}
+.card-btn.four{
+  background: linear-gradient(to left, var(--card4-gradient-color1), var(--card4-gradient-color2));
+}
+/*
 .card{
     background-color: white;
     margin-top: 40px;
@@ -332,6 +458,16 @@ text-align:center;
     transform: translateY(-2px) translateX(-2px);
     box-shadow: 10px 10px 12px rgba(172, 172, 170, 0.171);
 }
+.backnum{
+    display: block;
+    font-family:"Momo Trust Display", sans-serif;
+    width: 150px;
+    height: 150px;
+    top: 15px;
+    right: 15px;
+    position: absolute;
+
+}
 
 
 
@@ -346,17 +482,20 @@ text-align:center;
     border-top-right-radius: 17px;
 }
 /*Cantidad de megas*/
+/*
 .card h1{
 
     font-family: "Momo Trust Display", sans-serif;
     font-size:80px;
 } 
 /*Palabra "MEGAS"*/
+/*
 .card p{
     font-family: "Momo Trust Display", sans-serif;
     font-size: 20px;
 }
 /*Precio y linea    */
+/*
 .card span{
     margin-top: auto    ;
     height: 35px;
@@ -368,7 +507,7 @@ text-align:center;
 /*Card del servicio de zapping*/
 .card-zapping{
     background-color: white;
-    margin-top: 40px;
+    margin-top: 0px;
     border:1px solid #e7e6e6;
     padding:20px;
         height:610px;
@@ -378,6 +517,7 @@ text-align:center;
     transition: all 0.2s ease;
 }
 .card-zapping:hover {
+    cursor: default;
     background-color: #f5f5f6;
     border:2px solid white;
     transform: translateY(-2px) translateX(-2px);
@@ -504,6 +644,12 @@ button{
     padding:70px 8%;
     text-align:center;
     }
+#map {
+    border:2px solid rgb(204, 204, 204); 
+    width: 100%;
+    height: 500px;
+    border-radius: 16px;
+}
 
 iframe{
     width:90%;
@@ -1190,7 +1336,7 @@ footer {
 .whatsapp-float {
     position: fixed;
     bottom: 60px;
-    right: 7%;
+    right: 5%;
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -1213,3 +1359,5 @@ footer {
     height: 28px;
     display: block;
 }
+
+

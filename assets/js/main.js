@@ -70,3 +70,27 @@ if (menuBtn && sidebar && overlay) {
         overlay.classList.remove("active");
     });
 }
+const lat = -0.927724;
+const lng = -80.206126;
+
+// Crear mapa
+const map = L.map('map').setView([lat, lng], 12);
+
+// Cargar mapa de OpenStreetMap
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+// Marcar ubicación central
+L.marker([lat, lng])
+    .addTo(map)
+    .bindPopup('Oficina')
+    .openPopup();
+
+// Dibujar radio de 10 km
+L.circle([lat, lng], {
+    radius: 15500, // 10000=10km
+    color: '#1E40AF',
+    fillColor: '#1E40AF',
+    fillOpacity: 0.2
+}).addTo(map);

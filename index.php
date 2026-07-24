@@ -31,6 +31,8 @@ $titulo = $titulos[$pagina];
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Momo+Trust+Display&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         <script src="https://unpkg.com/lucide@latest"></script>
         <style>html{scroll-behavior:smooth;}</style>
     </head>
@@ -65,8 +67,21 @@ $titulo = $titulos[$pagina];
             <section class="planes">
             <h2>Planes y promociones</h2>
                 <div class="cards">
-                    <div class="card">
-                        <h3>Plan Básico</h3>
+                    <div class="card-wrap">
+                        <div class="card-header one">
+                            <i class="fas fa-code">60MB</i>
+                        </div>
+                        <div class="card-content">
+                            <h1 class="card-title">$20.55/mes</h1>
+                            <h1 class="card-text">Instalacion sin costo</h1>
+                            <br><br><br><br><br>
+                                <p class="card-text">*Precio incluye IVA</p>
+                                <a class="card-btn one" href="#contacto">Me interesa</a>
+                            </div>
+                        </div>
+                    <!--<div class="card">
+                        <h1 class="backnum">60</h1>
+                        <h3>Plan Básico</h3>                        
                         <h1>60</h1>
                         <p>MEGAS</p>
                         <span>$20.55/mes</span>
@@ -99,14 +114,14 @@ $titulo = $titulos[$pagina];
                             <p>*Precio incluye IVA</p>
                         </div>
                         <a href="#contacto" class="buttonCard">¡Me interesa!</a>
-                    </div>
+                    </div>-->
 
                     <div class="card-zapping">
                         <h3><span>ZAPPING</span></h3>
                         <h1>52</h1>
                         <p>CANALES</p>
                         <span>$5.25/mes</span>
-                        <span>Televisión en vivo por internet</span>
+                        <span style="border-bottom:0px;">Televisión en vivo por internet</span>
                         <div class="txt">
                             <p>*Precio incluye IVA</p>
                         </div>
@@ -210,7 +225,9 @@ $titulo = $titulos[$pagina];
                 <iframe class="iframe1"
                 src="https://www.google.com/maps?q=-0.9277629850168421, -80.2060910849771&output=embed">
                 </iframe> 
-                <a href="https://www.google.com/maps?q=-0.9277629850168421, -80.2060910849771" style="text-decoration: none;" target="_blank">Abrir mapa</a>
+                <a href="https://www.google.com/maps?q=-0.9277629850168421, -80.2060910849771" style="text-decoration: none;" target="_blank">Abrir en google maps</a>
+                <p>o</p>
+                <a href="index.php?page=contacto#zone" style="text-decoration: none;">Ver cobertura</a>
             </div>
                        
         </section>

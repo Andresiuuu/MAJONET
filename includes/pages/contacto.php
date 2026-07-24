@@ -1,5 +1,5 @@
 <section class="page-section">
-    <div class="page-content">
+    <div class="page-content" style="margin-bottom:5%;">
         <h1 class="page-title">Contacto</h1>
         <div class="contact-grid">
             <div class="contact-info">
@@ -32,10 +32,18 @@
                 <h2>Contáctanos por WhatsApp</h2>
                 <p>Respuesta rápida y atención personalizada</p>
                 <a href="https://wa.me/593991268129" target="_blank" rel="noopener" class="btn-whatsapp">
-                    <img src="assets/icons/logo-whatsapp.png" alt="" class="btn-whatsapp-icon">
                     Escribenos ahora
                 </a>
             </div>
         </div>
+    </div>
+    <div class="page-content" id="zone">
+        <h1 class="page-title">Zona de cobertura</h1>
+        <div id="map">
+            <iframe
+                src="https://www.google.com/maps?q=-0.9277629850168421, -80.2060910849771&output=embed">
+            </iframe>
+        </div>
+        <a style="text-decoration: none;" target="_blank" href="https://www.google.com/maps?q=-0.9277629850168421, -80.2060910849771 ">Ver en Google Maps</a>
     </div>
 </section>
